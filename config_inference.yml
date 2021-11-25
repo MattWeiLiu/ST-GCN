@@ -1,0 +1,50 @@
+# '../data/
+data:
+  nbhd_adj_path: 'graph/EucAdjMatrix_align.npz'
+  simi_adj_path: 'graph/Simi_SparseMatrix_align.npz'
+  cont_adj_path: 'graph/RoadMaps_AdjMatrix_align_scaled.npz'
+  geohash_path: 'data/GridSorting.csv'
+  time_length: 16
+  feature_dims: 3
+
+train:
+  batch_size: 4
+  epoch: 50
+  normalize_type: 'vertex'
+
+valid:
+  batch_size: 2
+  coefficient: 3
+
+inference:  ## Include inference & re-train
+  model: 'BestModel/MFeat_last1y_16_T3-h32-G1diff_UNetSTMGCN2_mse_opt-adam_bs2_train_2020-10-22.h5'
+  batch_size: 1
+  scalar_path: 'scaler.pkl'
+  form: "%Y-%m-%d %H:%M:%S"
+  bigquery: 
+      project_id: 'taiwan-taxi'
+      dataset_id: 'twtaxi_dw_ml'
+      table_id: 'taiwantaxi_customer_demand_history'
+      result_table_id: 'taiwantaxi_inferred_result'
+
+graph:
+  num_vertices: 11520
+
+model:
+  loss: 'mse'    # 'mse', 'poisson'
+  attention: False
+  # en_ksize: [7, 5, 5, 3, 3, 3]
+  # de_ksize: [3, 3, 3, 3, 3, 3]
+  en_ksize: [3, 3, 3]
+  de_ksize: [3, 3, 3]
+  num_layers: 3
+  hidden_dims: 32
+  keep_drop: 0.1
+  max_diffusion_step: 1
+  input_dims: 11520
+  output_dims: 11520
+  regularizer_scale: 0.003
+  
+optimizer:
+  method: 'adam'
+  learning_rate: 0.00001

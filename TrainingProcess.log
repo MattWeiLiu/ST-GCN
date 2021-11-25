@@ -1,0 +1,126 @@
+---------------------------------- APP CONFIG ----------------------------------
+data: 
+  data_path: ../data/acceptance_15_1.csv
+  nbhd_adj_path: ../data/EucAdjMatrix_align_v2.npz
+  simi_adj_path: ../data/Simi_SparseMatrix_align_v2.npz
+  cont_adj_path: ../data/RoadMaps_AdjMatrix_align_scaled_v2.npz
+  time_length: 16
+  feature_dims: 3
+train: 
+  batch_size: 4
+  epoch: 50
+  normalize_type: vertex
+valid: 
+  batch_size: 2
+graph: 
+  num_vertices: 11520
+model: 
+  loss: mse
+  attention: False
+  en_ksize: [3, 3, 3]
+  de_ksize: [3, 3, 3]
+  num_layers: 3
+  hidden_dims: 32
+  keep_drop: 0.1
+  max_diffusion_step: 1
+  input_dims: 11520
+  output_dims: 11520
+  regularizer_scale: 0.003
+optimizer: 
+  method: adam
+  learning_rate: 1e-06
+--------------------------------------------------------------------------------
+dataset.shape = (46752, 11520) -------------------------------------------------------------------
+X_train:(27001, 16, 11520, 3), y_train:(27001, 11520)
+X_val:(8999, 16, 11520, 3), y_val:(8999, 11520)
+Model name: u_net_stmgc_n2
+Epoch: 1/50	train_loss: 0.001544	val_loss: 0.001585
+Val Set Performance: Unscaled MSE: 0.206934952594767 Unscaled RMSE: 0.4549010360449479
+Epoch: 2/50	train_loss: 0.001412	val_loss: 0.001465
+Val Set Performance: Unscaled MSE: 0.163195040386502 Unscaled RMSE: 0.403974059051447
+Epoch: 3/50	train_loss: 0.001343	val_loss: 0.001400
+Val Set Performance: Unscaled MSE: 0.14660628054635627 Unscaled RMSE: 0.382891995928821
+Epoch: 4/50	train_loss: 0.001312	val_loss: 0.001373
+Val Set Performance: Unscaled MSE: 0.13996279672957554 Unscaled RMSE: 0.37411602041288683
+Epoch: 5/50	train_loss: 0.001289	val_loss: 0.001375
+Val Set Performance: Unscaled MSE: 0.13652626118909109 Unscaled RMSE: 0.3694946023815383
+Epoch: 6/50	train_loss: 0.001300	val_loss: 0.001371
+Val Set Performance: Unscaled MSE: 0.13469838751442803 Unscaled RMSE: 0.36701278930635106
+Epoch: 7/50	train_loss: 0.001270	val_loss: 0.001384
+Val Set Performance: Unscaled MSE: 0.13642661155921906 Unscaled RMSE: 0.36935973191350874
+Epoch: 8/50	train_loss: 0.001260	val_loss: 0.001374
+Val Set Performance: Unscaled MSE: 0.13256574086859454 Unscaled RMSE: 0.36409578529364295
+Epoch: 9/50	train_loss: 0.001270	val_loss: 0.001384
+Val Set Performance: Unscaled MSE: 0.1348105249699428 Unscaled RMSE: 0.36716552802508956
+Epoch: 10/50	train_loss: 0.001261	val_loss: 0.001357
+Val Set Performance: Unscaled MSE: 0.1323615415605479 Unscaled RMSE: 0.3638152574598101
+Epoch: 11/50	train_loss: 0.001264	val_loss: 0.001337
+Val Set Performance: Unscaled MSE: 0.1333627582510857 Unscaled RMSE: 0.3651886611754063
+Epoch: 12/50	train_loss: 0.001255	val_loss: 0.001383
+Val Set Performance: Unscaled MSE: 0.1378998721104006 Unscaled RMSE: 0.3713487203564873
+Epoch: 13/50	train_loss: 0.001244	val_loss: 0.001353
+Val Set Performance: Unscaled MSE: 0.13126920599969363 Unscaled RMSE: 0.36231092448295515
+Epoch: 14/50	train_loss: 0.001243	val_loss: 0.001342
+Val Set Performance: Unscaled MSE: 0.1289592702033887 Unscaled RMSE: 0.35910899487953335
+Epoch: 15/50	train_loss: 0.001249	val_loss: 0.001369
+Val Set Performance: Unscaled MSE: 0.13375339380158963 Unscaled RMSE: 0.36572311083877324
+Epoch: 16/50	train_loss: 0.001244	val_loss: 0.001349
+Val Set Performance: Unscaled MSE: 0.13038352751118126 Unscaled RMSE: 0.36108659281560324
+Epoch: 17/50	train_loss: 0.001244	val_loss: 0.001349
+Val Set Performance: Unscaled MSE: 0.12892641527787685 Unscaled RMSE: 0.35906324690488284
+Epoch: 18/50	train_loss: 0.001245	val_loss: 0.001347
+Val Set Performance: Unscaled MSE: 0.1294292007018714 Unscaled RMSE: 0.359762700542832
+Epoch: 19/50	train_loss: 0.001250	val_loss: 0.001360
+Val Set Performance: Unscaled MSE: 0.13005677877535188 Unscaled RMSE: 0.3606338569454508
+Epoch: 20/50	train_loss: 0.001240	val_loss: 0.001336
+Val Set Performance: Unscaled MSE: 0.12593179963968362 Unscaled RMSE: 0.3548687076084388
+Epoch: 21/50	train_loss: 0.001251	val_loss: 0.001310
+Val Set Performance: Unscaled MSE: 0.12379225512635149 Unscaled RMSE: 0.3518412356821632
+Epoch: 22/50	train_loss: 0.001249	val_loss: 0.001336
+Val Set Performance: Unscaled MSE: 0.12751465035903758 Unscaled RMSE: 0.357091935443854
+Epoch: 23/50	train_loss: 0.001239	val_loss: 0.001351
+Val Set Performance: Unscaled MSE: 0.12975642373656524 Unscaled RMSE: 0.36021718967390387
+Epoch: 24/50	train_loss: 0.001238	val_loss: 0.001323
+Val Set Performance: Unscaled MSE: 0.1267726989286999 Unscaled RMSE: 0.3560515397083685
+Epoch: 25/50	train_loss: 0.001249	val_loss: 0.001325
+Val Set Performance: Unscaled MSE: 0.1272151439413486 Unscaled RMSE: 0.3566723201221937
+Epoch: 26/50	train_loss: 0.001254	val_loss: 0.001333
+Val Set Performance: Unscaled MSE: 0.12633702685666498 Unscaled RMSE: 0.35543920275718743
+Epoch: 27/50	train_loss: 0.001229	val_loss: 0.001311
+Val Set Performance: Unscaled MSE: 0.12545177507502797 Unscaled RMSE: 0.35419172078837186
+Epoch: 28/50	train_loss: 0.001235	val_loss: 0.001319
+Val Set Performance: Unscaled MSE: 0.12714273676487187 Unscaled RMSE: 0.3565708018961618
+Epoch: 29/50	train_loss: 0.001232	val_loss: 0.001378
+Val Set Performance: Unscaled MSE: 0.1311371584600682 Unscaled RMSE: 0.3621286490462584
+Epoch: 30/50	train_loss: 0.001231	val_loss: 0.001380
+Val Set Performance: Unscaled MSE: 0.13111978030467838 Unscaled RMSE: 0.3621046538014644
+Epoch: 31/50	train_loss: 0.001229	val_loss: 0.001338
+Val Set Performance: Unscaled MSE: 0.129835595114143 Unscaled RMSE: 0.36032706686306953
+Epoch: 32/50	train_loss: 0.001233	val_loss: 0.001350
+Val Set Performance: Unscaled MSE: 0.1277105846658901 Unscaled RMSE: 0.3573661772830357
+Epoch: 33/50	train_loss: 0.001234	val_loss: 0.001316
+Val Set Performance: Unscaled MSE: 0.1261504411786714 Unscaled RMSE: 0.355176633773495
+Epoch: 34/50	train_loss: 0.001247	val_loss: 0.001329
+Val Set Performance: Unscaled MSE: 0.1271359843618811 Unscaled RMSE: 0.3565613332399927
+Epoch: 35/50	train_loss: 0.001233	val_loss: 0.001313
+Val Set Performance: Unscaled MSE: 0.12675516384044339 Unscaled RMSE: 0.35602691448883944
+Epoch: 36/50	train_loss: 0.001225	val_loss: 0.001349
+Val Set Performance: Unscaled MSE: 0.13016018566895796 Unscaled RMSE: 0.36077719671420194
+Epoch: 37/50	train_loss: 0.001229	val_loss: 0.001350
+Val Set Performance: Unscaled MSE: 0.12996355379198024 Unscaled RMSE: 0.3605045822066347
+Epoch: 38/50	train_loss: 0.001237	val_loss: 0.001343
+Val Set Performance: Unscaled MSE: 0.12952473802123673 Unscaled RMSE: 0.3598954542936556
+Epoch: 39/50	train_loss: 0.001232	val_loss: 0.001338
+Val Set Performance: Unscaled MSE: 0.12676224580895756 Unscaled RMSE: 0.3560368601829838
+Epoch: 40/50	train_loss: 0.001248	val_loss: 0.001332
+Val Set Performance: Unscaled MSE: 0.12576958648095582 Unscaled RMSE: 0.35464008019533805
+Epoch: 41/50	train_loss: 0.001238	val_loss: 0.001346
+Val Set Performance: Unscaled MSE: 0.1280012274054384 Unscaled RMSE: 0.35777259174710185
+Epoch: 42/50	train_loss: 0.001247	val_loss: 0.001323
+Val Set Performance: Unscaled MSE: 0.12548435723836862 Unscaled RMSE: 0.3542377128968182
+Epoch: 43/50	train_loss: 0.001233	val_loss: 0.001325
+Val Set Performance: Unscaled MSE: 0.12454854277893329 Unscaled RMSE: 0.35291435615306627
+Epoch: 44/50	train_loss: 0.001236	val_loss: 0.001326
+Val Set Performance: Unscaled MSE: 0.1250611606660693 Unscaled RMSE: 0.3536398742592092
+Epoch: 45/50	train_loss: 0.001230	val_loss: 0.001294
+Val Set Performance: Unscaled MSE: 0.12153749257648869 Unscaled RMSE: 0.3486222777971722
